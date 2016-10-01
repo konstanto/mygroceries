@@ -11,9 +11,7 @@
     "body-parser": "~1.0.1",
     "express": "^4.14.0",
     "mongoose": "~3.6.13",
-    "request": "^2.75.0"
-  },
-  "devDependencies": {
+    "request": "^2.75.0",
     "@types/body-parser": "0.0.33",
     "@types/express": "^4.0.33",
     "@types/node": "^6.0.41",
