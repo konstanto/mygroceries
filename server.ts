@@ -1,9 +1,10 @@
 "use strict"
 
-let express = require('express');
-var request = require('request');
-let app = express();       
-let bodyParser = require('body-parser');
+import * as express from "express";
+import * as request from "request";
+import * as bodyParser from "body-parser";
+
+let app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -14,6 +15,7 @@ var router = express.Router();
 const VALIDATION_TOKEN = "konstanto_is_testing_messenger_bots_because_it_is_cool";
 const PAGE_ACCESS_TOKEN = "EAALaBChvfCkBAGzfRBOwpwqO3TNIQ8cq8i0cuh9WwwIeAlsdCvoWCEkgWsqhCvfn8pHMEOwgU0SFjrKH8wC1dTDWLGILQQKPZAjzPh1zYjwewpsOtKLQ7F4j6xd5TbjkBc3xAC7hnk1LiZAQBQJy1EMY1T2c65LNhftTkWwQZDZD";
 router.get('/webhook', function(req, res) {
+  
   if (req.query['hub.mode'] === 'subscribe' &&
       req.query['hub.verify_token'] === VALIDATION_TOKEN) {
     console.log("Validating webhook");
@@ -82,19 +84,19 @@ function receivedMessage(event) {
     // the text we received.
     switch (messageText) {
       case 'image':
-        sendImageMessage(senderID);
+        //sendImageMessage(senderID);
         break;
 
       case 'button':
-        sendButtonMessage(senderID);
+        //sendButtonMessage(senderID);
         break;
 
       case 'generic':
-        sendGenericMessage(senderID);
+        //sendGenericMessage(senderID);
         break;
 
       case 'receipt':
-        sendReceiptMessage(senderID);
+        //sendReceiptMessage(senderID);
         break;
 
       default:
@@ -119,13 +121,13 @@ app.post('/webhook', function (req, res) {
       // Iterate over each messaging event
       pageEntry.messaging.forEach(function(messagingEvent) {
         if (messagingEvent.optin) {
-          receivedAuthentication(messagingEvent);
+          //receivedAuthentication(messagingEvent);
         } else if (messagingEvent.message) {
           receivedMessage(messagingEvent);
         } else if (messagingEvent.delivery) {
-          receivedDeliveryConfirmation(messagingEvent);
+          //receivedDeliveryConfirmation(messagingEvent);
         } else if (messagingEvent.postback) {
-          receivedPostback(messagingEvent);
+          //receivedPostback(messagingEvent);
         } else {
           console.log("Webhook received unknown messagingEvent: ", messagingEvent);
         }
