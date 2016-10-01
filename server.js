@@ -12,6 +12,7 @@ var port = process.env.PORT || 8080;
 var router = express.Router();  
 
 const VALIDATION_TOKEN = "konstanto_is_testing_messenger_bots_because_it_is_cool";
+const PAGE_ACCESS_TOKEN = "EAALaBChvfCkBAGzfRBOwpwqO3TNIQ8cq8i0cuh9WwwIeAlsdCvoWCEkgWsqhCvfn8pHMEOwgU0SFjrKH8wC1dTDWLGILQQKPZAjzPh1zYjwewpsOtKLQ7F4j6xd5TbjkBc3xAC7hnk1LiZAQBQJy1EMY1T2c65LNhftTkWwQZDZD";
 router.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
       req.query['hub.verify_token'] === VALIDATION_TOKEN) {
