@@ -9,6 +9,7 @@ let config = {
             "./server.ts"
         ]
     },
+    target: "node",
     output: {
         path: path.resolve("./dist"),
         filename: "server.js"
