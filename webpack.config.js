@@ -11,7 +11,7 @@ let config = {
     },
     target: "node",
     output: {
-        path: path.resolve("./dist"),
+        path: path.resolve("./"),
         filename: "server.js"
     },
 
